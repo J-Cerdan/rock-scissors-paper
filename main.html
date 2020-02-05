@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+        <meta content="utf-8" http-equiv="encoding">
+    </head>
+
+    <body>
+        <h1>Rock, Paper, Scissors</h1>
+
+        
+
+
+        <script>
+            function playRound(playerSelect, computerSelect){
+                if (playerSelect == computerSelect){
+                    return 'draw'
+                } else if (computerSelect == 'rock'){
+                    if (playerSelect == 'scissors') {
+                        return 'You Lose! Rock beats Scissors'
+                    } else {
+                        return 'You Win! Paper beats Rock'
+                    }
+                } else if (computerSelect == 'paper'){
+                    if (playerSelect == 'rock') {
+                        return 'You Lose! Paper beats Rock'
+                    } else {
+                        return 'You Win! Scissors beats Paper'
+                    }
+                } else {
+                    if (playerSelect == 'paper') {
+                        return 'You Lose! Scissors beats Paper'
+                    } else {
+                        return 'You Win! Rock beats Scissors'
+                    }
+                }
+            }
+
+            function computerPlay(){
+                var select = Math.round(Math.random()*3)
+
+                if (select == 1){
+                    return 'rock';
+                } else if (select == 2){
+                    return 'paper';
+                } else {
+                    return 'scissors';
+                }
+            }
+
+            const playerSelect = 'rock'
+            const computerSelect = computerPlay()
+            console.log(playRound(playerSelect, computerSelect))
+        </script>
+    </body>
+</html>
+    
+
