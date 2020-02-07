@@ -8,10 +8,10 @@
     <body>
         <h1>Rock, Paper, Scissors</h1>
 
-        
-
 
         <script>
+
+
             function playRound(playerSelect, computerSelect){
                 if (playerSelect == computerSelect){
                     return 'draw'
@@ -48,9 +48,35 @@
                 }
             }
 
-            const playerSelect = 'rock'
-            const computerSelect = computerPlay()
-            console.log(playRound(playerSelect, computerSelect))
+            
+
+            function game(){
+                var i=0;
+
+                const gamesToPlay = prompt("How many games do you want to play?")
+
+                for (i=0; i<gamesToPlay; i++){
+
+                    var error = 1;
+
+                    do {
+                        const inputPlayer = prompt("Rock/Paper/Scissors?")
+                        const playerSelect = inputPlayer.toLowerCase();
+
+                        if (playerSelect == 'rock' || playerSelect == 'paper' || playerSelect == 'scissors'){
+                            const computerSelect = computerPlay()
+                            console.log(playRound(playerSelect, computerSelect))
+                            break;
+                        } else {
+                            alert("Input error! Only rock, paper or scissors.")
+                        }
+                    } while (error = 1);
+                    
+                }
+            }
+
+            game();
+
         </script>
     </body>
 </html>
