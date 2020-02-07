@@ -6,34 +6,55 @@
     </head>
 
     <body>
-        <h1>Rock, Paper, Scissors</h1>
+        <h1>Rock, Paper, Scissors by Joseph Cerdan</h1>
+        <h3>To play again:</h3>
+        <h4>Referesh the page</h4>
+        <h5>or</h5>
+        <h4>Command + R</h4>
+
+
 
 
         <script>
 
+            var uWin = 0;
+            var cWin = 0;
 
             function playRound(playerSelect, computerSelect){
                 if (playerSelect == computerSelect){
+                    alert("Its a draw! Both selected " + playerSelect + "\nComputer: " + cWin + "\nUser: " + uWin)
                     return 'draw'
                 } else if (computerSelect == 'rock'){
                     if (playerSelect == 'scissors') {
-                        return 'You Lose! Rock beats Scissors'
+                        cWin++;
+                        alert("You Lose! " + computerSelect + " beats " + playerSelect + "\nComputer: " + cWin + "\nUser: " + uWin)
+                        return 'You Lose! ' + computerSelect + ' beats ' + playerSelect
                     } else {
-                        return 'You Win! Paper beats Rock'
+                        uWin++
+                        alert("You Win! " + playerSelect + " beats " + computerSelect + "\nComputer: " + cWin + "\nUser: " + uWin)
+                        return 'You Win! ' + playerSelect + ' beats ' + computerSelect
                     }
                 } else if (computerSelect == 'paper'){
                     if (playerSelect == 'rock') {
-                        return 'You Lose! Paper beats Rock'
+                        cWin++
+                        alert("You Lose! " + computerSelect + " beats " + playerSelect + "\nComputer: " + cWin + "\nUser: " + uWin)
+                        return 'You Lose! ' + computerSelect + ' beats ' + playerSelect
                     } else {
-                        return 'You Win! Scissors beats Paper'
+                        uWin++
+                        alert("You Win! " + playerSelect + " beats " + computerSelect + "\nComputer: " + cWin + "\nUser: " + uWin)
+                        return 'You Win! ' + playerSelect + ' beats ' + computerSelect
                     }
                 } else {
                     if (playerSelect == 'paper') {
-                        return 'You Lose! Scissors beats Paper'
+                        cWin++
+                        alert("You Lose! " + computerSelect + " beats " + playerSelect + "\nComputer: " + cWin + "\nUser: " + uWin)
+                        return 'You Lose! ' + computerSelect + ' beats ' + playerSelect
                     } else {
-                        return 'You Win! Rock beats Scissors'
+                        uWin++
+                        alert("You Win! " + playerSelect + " beats " + computerSelect + "\nComputer: " + cWin + "\nUser: " + uWin)
+                        return 'You Win! ' + playerSelect + ' beats ' + computerSelect
                     }
-                }
+                } 
             }
 
             function computerPlay(){
@@ -76,6 +97,17 @@
             }
 
             game();
+
+            //end
+            if (cWin>uWin){
+                alert("You Lose. Computer Wins.\nComputer: " + cWin + "\nUser: " + uWin)
+            } else {
+                alert("You Win! Computer Loses.\nComputer: " + cWin + "\nUser: " + uWin)
+            }
+
+
+            alert("Thank you for playing!\nRock, Paper, Scissors\nby Joseph Cerdan.")
+
 
         </script>
     </body>
