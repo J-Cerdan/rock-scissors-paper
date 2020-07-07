@@ -3,113 +3,42 @@
     <head>
         <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
         <meta content="utf-8" http-equiv="encoding">
+        <link href="styles/style.css" rel="stylesheet">
+        <title>Rock, Paper, Scissors by Joseph Cerdan</title>
     </head>
 
     <body>
-        <h1>Rock, Paper, Scissors by Joseph Cerdan</h1>
-        <h3>To play again:</h3>
-        <h4>Referesh the page</h4>
-        <h5>or</h5>
-        <h4>Command + R</h4>
+        <div id="head">
+            <h1>Rock, Paper, Scissors by Joseph Cerdan</h1>
+        </div>
+        <div id="games">
+            <p><strong>Games:</strong></p><p id="gameamount">0</p>
+        </div>
+        <div id="score">
+            <p><strong>User:</strong></p><p id="userscore">0</p>
+            <p><strong>Computer:</strong></p><p id="cpuscore">0</p>
+            <p><strong>Draw:</strong></p><p id="drawscore">0</p>
+        </div>
+        <div id="selections">
+            <p>You selected:</p><p id="userselect"></p>
+            <p>Computer selected:</p><p id="cpuselect"></p>
+        </div>
+        <div id="outcome">
+            <p id="roundoutcome"></p>
+        </div>
+        <div id="refresh">
+            <button id="refreshbutton" onClick="window.location.reload();">New Game</button>
+        </div>
+        <div id="buttons">
+            <button id="rock">Rock</button>
+            <button id="paper">Paper</button>
+            <button id="scissors">Scissors</button>
+        </div>
+        <div id="thanks">
+            <p>Thank you for playing my game! - Joseph Cerdan</p>
+        </div>
 
-
-
-
-        <script>
-
-            var uWin = 0;
-            var cWin = 0;
-
-            function playRound(playerSelect, computerSelect){
-                if (playerSelect == computerSelect){
-                    alert("Its a draw! Both selected " + playerSelect + "\nComputer: " + cWin + "\nUser: " + uWin)
-                    return 'draw'
-                } else if (computerSelect == 'rock'){
-                    if (playerSelect == 'scissors') {
-                        cWin++;
-                        alert("You Lose! " + computerSelect + " beats " + playerSelect + "\nComputer: " + cWin + "\nUser: " + uWin)
-                        return 'You Lose! ' + computerSelect + ' beats ' + playerSelect
-                    } else {
-                        uWin++
-                        alert("You Win! " + playerSelect + " beats " + computerSelect + "\nComputer: " + cWin + "\nUser: " + uWin)
-                        return 'You Win! ' + playerSelect + ' beats ' + computerSelect
-                    }
-                } else if (computerSelect == 'paper'){
-                    if (playerSelect == 'rock') {
-                        cWin++
-                        alert("You Lose! " + computerSelect + " beats " + playerSelect + "\nComputer: " + cWin + "\nUser: " + uWin)
-                        return 'You Lose! ' + computerSelect + ' beats ' + playerSelect
-                    } else {
-                        uWin++
-                        alert("You Win! " + playerSelect + " beats " + computerSelect + "\nComputer: " + cWin + "\nUser: " + uWin)
-                        return 'You Win! ' + playerSelect + ' beats ' + computerSelect
-                    }
-                } else {
-                    if (playerSelect == 'paper') {
-                        cWin++
-                        alert("You Lose! " + computerSelect + " beats " + playerSelect + "\nComputer: " + cWin + "\nUser: " + uWin)
-                        return 'You Lose! ' + computerSelect + ' beats ' + playerSelect
-                    } else {
-                        uWin++
-                        alert("You Win! " + playerSelect + " beats " + computerSelect + "\nComputer: " + cWin + "\nUser: " + uWin)
-                        return 'You Win! ' + playerSelect + ' beats ' + computerSelect
-                    }
-                } 
-            }
-
-            function computerPlay(){
-                var select = Math.round(Math.random()*3)
-
-                if (select == 1){
-                    return 'rock';
-                } else if (select == 2){
-                    return 'paper';
-                } else {
-                    return 'scissors';
-                }
-            }
-
-            
-
-            function game(){
-                var i=0;
-
-                const gamesToPlay = prompt("How many games do you want to play?")
-
-                for (i=0; i<gamesToPlay; i++){
-
-                    var error = 1;
-
-                    do {
-                        const inputPlayer = prompt("Rock/Paper/Scissors?")
-                        const playerSelect = inputPlayer.toLowerCase();
-
-                        if (playerSelect == 'rock' || playerSelect == 'paper' || playerSelect == 'scissors'){
-                            const computerSelect = computerPlay()
-                            console.log(playRound(playerSelect, computerSelect))
-                            break;
-                        } else {
-                            alert("Input error! Only rock, paper or scissors.")
-                        }
-                    } while (error = 1);
-                    
-                }
-            }
-
-            game();
-
-            //end
-            if (cWin>uWin){
-                alert("You Lose. Computer Wins.\nComputer: " + cWin + "\nUser: " + uWin)
-            } else {
-                alert("You Win! Computer Loses.\nComputer: " + cWin + "\nUser: " + uWin)
-            }
-
-
-            alert("Thank you for playing!\nRock, Paper, Scissors\nby Joseph Cerdan.")
-
-
-        </script>
+        <script src="script/script.js"></script>
     </body>
 </html>
     
